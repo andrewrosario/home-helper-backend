@@ -1,7 +1,7 @@
 class Project < ApplicationRecord
-    belongs_to :project_type
-    belongs_to :novice, class_name: 'User'
-    belongs_to :expert, class_name: 'User'
+    belongs_to :project_type, optional: true
+    belongs_to :novice, class_name: 'User', optional: true
+    belongs_to :expert, class_name: 'User', optional: true
     has_many :resources
     has_many :materials
     has_many :tasks
