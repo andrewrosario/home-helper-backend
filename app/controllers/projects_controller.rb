@@ -9,7 +9,7 @@ class ProjectsController < ApplicationController
 
     def show
         @project = Project.find(params[:id])
-        render json: @project
+        render json: { project: @project.as_json(include: [:materials, :tasks, :resources, :chat_room]) }
     end
 
     private
