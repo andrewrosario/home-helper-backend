@@ -2,7 +2,8 @@ class UsersController < ApplicationController
     skip_before_action :authorized, only: [:create]
 
     def index 
-       
+       @users = User.joins(:expert_ins).where('project_type_id = ?', params[:project_type_id].to_i)
+       render json: @users
     end
 
     def create
