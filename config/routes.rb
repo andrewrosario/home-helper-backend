@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   resources :project_types
   resources :users
   post '/login', to: 'auth#create'
+  get '/experts/:project_type_id', to: 'users#index'
 end

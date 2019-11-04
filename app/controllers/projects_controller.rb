@@ -11,6 +11,18 @@ class ProjectsController < ApplicationController
         #  { project: @project.as_json(include: [:materials, :tasks, :resources, :chat_room]) }
     end
 
+    def update
+        @project = Project.find(params[:id])
+
+        if @project.expert
+            @project.expert_id = nil
+            @project.save
+        else
+            @project.expert = User.find(id)
+        end
+        render json: @project
+    end
+
     private
 
     def project_params
