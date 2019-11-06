@@ -1,5 +1,5 @@
 class ProjectSerializer < ActiveModel::Serializer
-  attributes :id, :before_photos, :materials, :tasks, :resources, :chat_room, :title, :description, :expert, :project_type_id, :novice
+  attributes :id, :before_photos, :materials, :tasks, :resources, :chat_room, :title, :description, :expert, :project_type_id, :novice, :expert_status
 
   def before_photos
     return unless object.before_photos.attachments

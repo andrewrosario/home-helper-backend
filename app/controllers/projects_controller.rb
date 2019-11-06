@@ -13,11 +13,13 @@ class ProjectsController < ApplicationController
 
     def update
         @project = Project.find(params[:id])
-        if @project.expert
+        if @project.expert_status === 'accepted' || @project.expert_status === 'pending'
             @project.expert_id = nil
+            @project.expert_status = 'none'
             @project.save
         else
             @project.expert = User.find(params[:expert_id])
+            @project.expert_status = params[:expert_status]
             @project.save
         end
         render json: @project
@@ -26,6 +28,6 @@ class ProjectsController < ApplicationController
     private
 
     def project_params
-        params.permit(:novice_id, :title, :description, :project_type_id, before_photos: [])
+        params.permit(:novice_id, :expert_status, :title, :description, :project_type_id, before_photos: [])
     end
 end
