@@ -4,7 +4,6 @@ class ProjectsController < ApplicationController
         @@chat_room = ChatRoom.create(project_id: @project.id)
         @user = User.find(@project.novice_id)
         render json: @user
-        # { user: @user.as_json(include: [ {:novice_projects, :expert_projects }]) }
     end
 
     def show

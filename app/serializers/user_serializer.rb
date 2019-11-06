@@ -1,5 +1,10 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :name, :novice_projects, :expert_projects, :image
+  attributes :id, :name, :novice_projects, :expert_projects, :image, :jwt
+
+  def jwt
+    return unless instance_options[:jwt]
+    instance_options[:jwt]
+  end
 
   def novice_projects
     return unless object.novice_projects

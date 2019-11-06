@@ -1,5 +1,5 @@
 class ProjectSerializer < ActiveModel::Serializer
-  attributes :id, :before_photos, :materials, :tasks, :resources, :chat_room, :title, :description, :expert, :project_type_id
+  attributes :id, :before_photos, :materials, :tasks, :resources, :chat_room, :title, :description, :expert, :project_type_id, :novice
 
   def before_photos
     return unless object.before_photos.attachments
@@ -10,7 +10,17 @@ class ProjectSerializer < ActiveModel::Serializer
   end
 
   def expert
-    return unless object.expert
-    ActiveModelSerializers::SerializableResource.new(object.expert,  each_serializer: ExpertSerializer)
+    if object.expert
+      ExpertSerializer.new(object.expert)
+    end
+  end
+
+  def novice
+    ExpertSerializer.new(object.novice)
+
+  end
+
+  def chat_room
+    ActiveModelSerializers::SerializableResource.new(object.chat_room,  each_serializer: ChatRoomSerializer)
   end
 end

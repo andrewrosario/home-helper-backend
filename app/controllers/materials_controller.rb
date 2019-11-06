@@ -18,6 +18,12 @@ class MaterialsController < ApplicationController
         render json: @materials
     end
 
+    def update
+        @material = Material.find(params[:id])
+        @material.update(material_params)
+        find_all_and_render()
+    end
+
     private
 
     def material_params
