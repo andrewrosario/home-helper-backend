@@ -13,9 +13,13 @@ class ProjectsController < ApplicationController
 
     def update
         @project = Project.find(params[:id])
-        if @project.expert_status === 'accepted' || @project.expert_status === 'pending'
+        case params[:expert_status]
+        when 'none'
             @project.expert_id = nil
-            @project.expert_status = 'none'
+            @project.expert_status = params[:expert_status]
+            @project.save
+        when 'rejected'
+            @project.expert_status = params[:expert_status]
             @project.save
         else
             @project.expert = User.find(params[:expert_id])

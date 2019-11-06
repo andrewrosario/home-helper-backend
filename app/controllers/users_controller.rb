@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
     def show
         @user = User.find(params[:id])
-        render json: { user: @user.as_json(include: [:novice_projects, :expert_projects]) }
+        render json: @user
     end
 
     private
