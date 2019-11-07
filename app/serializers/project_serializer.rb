@@ -17,10 +17,17 @@ class ProjectSerializer < ActiveModel::Serializer
 
   def novice
     ExpertSerializer.new(object.novice)
-
   end
 
   def chat_room
     ActiveModelSerializers::SerializableResource.new(object.chat_room,  each_serializer: ChatRoomSerializer)
+  end
+
+  def tasks
+    ActiveModelSerializers::SerializableResource.new(object.tasks,  each_serializer: TaskSerializer)
+  end
+
+  def materials
+    ActiveModelSerializers::SerializableResource.new(object.materials,  each_serializer: MaterialSerializer)
   end
 end
