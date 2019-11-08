@@ -1,5 +1,10 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :name, :expert_ins, :novice_projects, :expert_projects, :image, :jwt
+  attributes :id, :name, :expert_ins, :novice_projects, :expert_projects, :image, :jwt, :rating
+
+  def rating
+    my_ratings = Rating.where(expert_id: object.id).average(:rating)
+    my_ratings.to_f
+  end
 
   def jwt
     return unless instance_options[:jwt]

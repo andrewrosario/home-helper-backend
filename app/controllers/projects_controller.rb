@@ -21,6 +21,12 @@ class ProjectsController < ApplicationController
         when 'rejected'
             @project.expert_status = params[:expert_status]
             @project.save
+        when 'add_photos'
+            if params[:after_photos]
+                @project.after_photos.attach(params[:after_photos])
+            end
+            @project.is_complete = true
+            @project.save
         else
             @project.expert = User.find(params[:expert_id])
             @project.expert_status = params[:expert_status]
@@ -32,6 +38,6 @@ class ProjectsController < ApplicationController
     private
 
     def project_params
-        params.permit(:novice_id, :expert_status, :title, :description, :project_type_id, before_photos: [])
+        params.permit(:novice_id, :expert_status, :title, :description, :project_type_id, before_photos: [], after_photos: [])
     end
 end
