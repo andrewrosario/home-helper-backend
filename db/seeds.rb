@@ -30,11 +30,13 @@ end
 end
 
 10.times do |i|
+    type_id = [1, 2, 3, 4, 5, 6].sample
+    novice_id = User.all.sample.id
     this_project = Project.create(
-        project_type_id: [1..6].sample,
-        description: "This is project number #{i}",
-        novice_id: [1..30].sample,
-        title: "Project ##{i}",
+        project_type_id: type_id,
+        description: "This is project number #1",
+        novice_id: novice_id,
+        title: "Project #1",
         expert_status: 'none',
         is_complete: false
     )
