@@ -28,3 +28,14 @@ end
         rate: number
     )
 end
+
+10.times do |i|
+    this_project = Project.create(
+        project_type_id: [1..6].sample,
+        description: "This is project number #{i}",
+        novice_id: [1..30].sample,
+        title: "Project ##{i}",
+        expert_status: 'none',
+        is_complete: false
+    )
+end
