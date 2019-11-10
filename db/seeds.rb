@@ -19,6 +19,7 @@ end
     number = rand(1..98)
     this_user.image.attach({
         io: image_fetcher(number + 1),
+        
         filename: "#{number}.jpg"
     })
     
@@ -47,7 +48,8 @@ end
 
 lizzo = User.new(name: 'Lizzo', email: 'lizzo@lizzo.com', password: 'lizzo', password_confirmation: 'lizzo')
 lizzo.image.attach({
-    io: File.open(Rails.root + 'public/lizzo.jpg')
+    io: File.open(Rails.root + 'public/lizzo.jpg'),
+    filename: "lizzo.jpg"
 })
 lizzo.save
 [1, 2, 3, 4, 5, 6].each do |i|

@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
     def index 
        @users = User.joins(:expert_ins).where('project_type_id = ?', params[:project_type_id].to_i)
-       render json: @users.as_json
+       render json: ActiveModelSerializers::SerializableResource.new(@users,  each_serializer: UserSerializer)
     end
 
     def create
