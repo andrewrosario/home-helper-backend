@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
-    skip_before_action :authorized, only: [:create]
+    skip_before_action :authorized, only: [:create, :index]
 
     def index 
        @users = User.joins(:expert_ins).where('project_type_id = ?', params[:project_type_id].to_i)
-       render json: ActiveModelSerializers::SerializableResource.new(@users,  each_serializer: UserSerializer)
+       render json: @users
     end
 
     def create
