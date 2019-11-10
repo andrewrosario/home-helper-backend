@@ -2,9 +2,10 @@ array = ['paint', 'plubming', 'electrical', 'carpentry', 'flooring', 'landscapin
 
 array.map { |type| ProjectType.create(name: type) }
 
-def image_fetcher(num)
+def image_fetcher(number)
     gender = ['men', 'women'].sample
-    open("https://randomuser.me/portraits/#{gender}/#{num}.jpg")
+    puts "https://randomuser.me/portraits/#{gender}/#{number}.jpg"
+    open("https://randomuser.me/portraits/#{gender}/#{number}.jpg")
 end
 
 30.times do |i|
@@ -15,9 +16,9 @@ end
         password_confirmation: 'password',
     )
 
-    number = rand(1..99)
+    number = rand(1..98)
     this_user.image.attach({
-        io: image_fetcher(number),
+        io: image_fetcher(number + 1),
         filename: "#{number}.jpg"
     })
     
@@ -34,10 +35,25 @@ end
     novice_id = User.all.sample.id
     this_project = Project.create(
         project_type_id: type_id,
-        description: "This is project number #1",
+        description: "This is project number ##{i}",
         novice_id: novice_id,
-        title: "Project #1",
+        title: "Project #{i}",
         expert_status: 'none',
         is_complete: false
+    )
+
+    ChatRoom.create(project_id: this_project.id)
+end
+
+lizzo = User.new(name: 'Lizzo', email: 'lizzo@lizzo.com', password: 'lizzo', password_confirmation: 'lizzo')
+lizzo.image.attach({
+    io: File.open(Rails.root + 'public/lizzo.jpg')
+})
+
+[1, 2, 3, 4, 5, 6].each do |i|
+    lizzo = ExpertIn.create(
+        user_id: lizzo.id,
+        project_type_id: i,
+        rate: 50
     )
 end
