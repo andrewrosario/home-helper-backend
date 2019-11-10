@@ -49,7 +49,7 @@ lizzo = User.new(name: 'Lizzo', email: 'lizzo@lizzo.com', password: 'lizzo', pas
 lizzo.image.attach({
     io: File.open(Rails.root + 'public/lizzo.jpg')
 })
-
+lizzo.save
 [1, 2, 3, 4, 5, 6].each do |i|
     lizzo = ExpertIn.create(
         user_id: lizzo.id,
