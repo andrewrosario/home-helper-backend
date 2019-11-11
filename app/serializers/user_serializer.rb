@@ -16,6 +16,11 @@ class UserSerializer < ActiveModel::Serializer
     ActiveModelSerializers::SerializableResource.new(object.novice_projects,  each_serializer: ProjectSerializer)
   end
 
+  def expert_projects
+    return unless object.expert_projects
+    ActiveModelSerializers::SerializableResource.new(object.expert_projects,  each_serializer: ProjectSerializer)
+  end
+
   def image
     Rails.application.routes.url_helpers.rails_blob_path(object.image, only_path: true)
   end

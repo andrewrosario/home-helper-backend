@@ -14,8 +14,7 @@ class MaterialsController < ApplicationController
         @material = Material.find(params[:id])
         project_id = @material.project.id
         @material.destroy
-        @materials = Material.all.where('project_id = ?', project_id).order(:id)
-        render json: @materials
+        find_all_and_render()
     end
 
     def update
