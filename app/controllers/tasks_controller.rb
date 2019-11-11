@@ -20,7 +20,8 @@ class TasksController < ApplicationController
         @task = Task.find(params[:id])
         project_id = @task.project.id
         @task.destroy
-        find_all_and_render()
+        @tasks = Task.all.where('project_id = ?', project_id).order(:id)
+        render json: @tasks
     end
 
     private
