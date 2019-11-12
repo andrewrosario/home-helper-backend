@@ -13,8 +13,7 @@ Please enter a unique email and password. If the username is already in use, you
 
 ### 1) Login/Signup!
 <img src="http://drive.google.com/uc?export=view&id=1OTGa7LqWhcyRXQK49WGJthZv_dZ9MOQ5" alt="drawing" width="300"/>
-![DIY_Helper_Sign_Up](http://drive.google.com/uc?export=view&id=1OTGa7LqWhcyRXQK49WGJthZv_dZ9MOQ5 =200x)
-![DIY_Helper_Sign_In](https://drive.google.com/open?id=1OTGa7LqWhcyRXQK49WGJthZv_dZ9MOQ5)
+<img src="http://drive.google.com/uc?export=view&id=1OTGa7LqWhcyRXQK49WGJthZv_dZ9MOQ5" alt="drawing" width="300"/>
 
 ### 2) Check out Project Management Dashboard
 ![Lizzo_Menu_Options](https://media.giphy.com/media/j04WCzclHKATpQWjLr/giphy.gif)
