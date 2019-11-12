@@ -12,6 +12,7 @@ Please enter a unique email and password. If the username is already in use, you
 ## Using DIY Helper!
 
 ### 1) Login/Signup!
+<img src="http://drive.google.com/uc?export=view&id=1OTGa7LqWhcyRXQK49WGJthZv_dZ9MOQ5" alt="drawing" style="width:200px;"/>
 ![DIY_Helper_Sign_Up](http://drive.google.com/uc?export=view&id=1OTGa7LqWhcyRXQK49WGJthZv_dZ9MOQ5 =200x)
 ![DIY_Helper_Sign_In](https://drive.google.com/open?id=1OTGa7LqWhcyRXQK49WGJthZv_dZ9MOQ5)
 
