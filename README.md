@@ -12,7 +12,7 @@ Please enter a unique email and password. If the username is already in use, you
 ## Using DIY Helper!
 
 ### 1) Login/Signup!
-![DIY_Helper_Sign_Up](http://drive.google.com/uc?export=view&id=1OTGa7LqWhcyRXQK49WGJthZv_dZ9MOQ5)
+![DIY_Helper_Sign_Up](http://drive.google.com/uc?export=view&id=1OTGa7LqWhcyRXQK49WGJthZv_dZ9MOQ5 =200x)
 ![DIY_Helper_Sign_In](https://drive.google.com/open?id=1OTGa7LqWhcyRXQK49WGJthZv_dZ9MOQ5)
 
 ### 2) Check out Project Management Dashboard
