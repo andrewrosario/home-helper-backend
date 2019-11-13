@@ -1,5 +1,5 @@
 class ProjectSerializer < ActiveModel::Serializer
-  attributes :id, :before_photos, :materials, :tasks, :resources, :chat_room, :title, :description, :expert, :project_type_id, :novice, :expert_status, :is_complete, :total_time
+  attributes :id, :before_photos, :materials, :tasks, :resources, :chat_room, :title, :description, :expert, :project_type_id, :novice, :expert_status, :is_complete
 
   def before_photos
     return unless object.before_photos.attachments
@@ -7,10 +7,6 @@ class ProjectSerializer < ActiveModel::Serializer
         Rails.application.routes.url_helpers.rails_blob_path(image, only_path: true)
     end
     image_urls
-  end
-
-  def total_time
-    object.total_time
   end
 
   def expert
