@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
             @tasks = Task.all.where('project_id = ?', @comment.task.project.id).order(:id)
             send_back = @tasks
         elsif @comment.material
-            @materials = Material.all.where('project_id = ?', @comment.task.project.id).order(:id)
+            @materials = Material.all.where('project_id = ?', @comment.material.project.id).order(:id)
             send_back = @materials
         end
         render json: send_back
