@@ -13,12 +13,16 @@ lizzo.image.attach({
     filename: "lizzo.jpg"
 })
 lizzo.save
+
+Rating.create(novice_id: 1, expert_id: 1, rating: 5)
+
 [1, 2, 3, 4, 5, 6].each do |i|
-    lizzo = ExpertIn.create(
+    expert_in = ExpertIn.create(
         user_id: lizzo.id,
-        project_type_id: i+1,
+        project_type_id: i,
         rate: 50
     )
+    puts expert_in
 end
 
 30.times do |i|
@@ -41,6 +45,8 @@ end
         project_type_id: category,
         rate: number
     )
+    rating = [1, 2, 3, 4, 5].sample
+    Rating.create(novice_id: 1, expert_id: this_user.id, rating: rating)
 end
 
 10.times do |i|
