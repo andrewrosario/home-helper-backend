@@ -4,12 +4,12 @@ class CommentsController < ApplicationController
         @comment = Comment.create(comment_params)
         if @comment.task
             @tasks = Task.all.where('project_id = ?', @comment.task.project.id).order(:id)
-            render json: @tasks
+            send_back = @tasks
         elsif @comment.material
             @materials = Material.all.where('project_id = ?', @comment.task.project.id).order(:id)
-            render json: @materials
+            send_back = @materials
         end
-        render json: @comment
+        render json: send_back
     end
 
     private
