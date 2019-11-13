@@ -1,5 +1,5 @@
 class ProjectSerializer < ActiveModel::Serializer
-  attributes :id, :before_photos, :materials, :tasks, :resources, :chat_room, :title, :description, :expert, :project_type_id, :novice, :expert_status, :is_complete
+  attributes :id, :before_photos, :materials, :tasks, :resources, :chat_room, :title, :description, :expert, :project_type_id, :novice, :expert_status, :is_complete, :complete_tasks
 
   def before_photos
     return unless object.before_photos.attachments
@@ -7,6 +7,10 @@ class ProjectSerializer < ActiveModel::Serializer
         Rails.application.routes.url_helpers.rails_blob_path(image, only_path: true)
     end
     image_urls
+  end
+
+  def complete_tasks
+    object.tasks.count {|task| task.is_complete}
   end
 
   def expert
