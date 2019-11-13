@@ -2,7 +2,13 @@ class CommentsController < ApplicationController
 
     def create
         @comment = Comment.create(comment_params)
-        
+        if @comment.task
+            @tasks = Task.all.where('project_id = ?', comment.task.project.id).order(:id)
+            render json: @tasks
+        elsif @comment.material
+            @materials = Material.all.where('project_id = ?', comment.task.project.id).order(:id)
+            render json: @materials
+        end
         render json: @comment
     end
 
