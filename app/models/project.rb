@@ -9,8 +9,4 @@ class Project < ApplicationRecord
     has_many_attached :before_photos
     has_many_attached :after_photos
     validates :project_type, presence: true
-
-    def total_time
-        Project.joins(:tasks).where('projects.id = ?', self.id).sum('tasks.time_required')
-    end
 end
