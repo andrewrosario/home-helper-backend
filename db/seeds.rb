@@ -49,17 +49,29 @@ end
     Rating.create(novice_id: 1, expert_id: this_user.id, rating: rating)
 end
 
-10.times do |i|
-    type_id = [1, 2, 3, 4, 5, 6].sample
-    novice_id = User.all.sample.id
-    this_project = Project.create(
-        project_type_id: type_id,
-        description: "This is project number ##{i}",
-        novice_id: novice_id,
-        title: "Project #{i}",
-        expert_status: 'none',
-        is_complete: false
-    )
+# 10.times do |i|
+#     type_id = [1, 2, 3, 4, 5, 6].sample
+#     novice_id = User.all.sample.id
+#     this_project = Project.create(
+#         project_type_id: type_id,
+#         description: "This is project number ##{i}",
+#         novice_id: novice_id,
+#         title: "Project #{i}",
+#         expert_status: 'none',
+#         is_complete: false
+#     )
 
-    ChatRoom.create(project_id: this_project.id)
-end
+#     ChatRoom.create(project_id: this_project.id)
+# end
+
+# leaky_faucet = Project.create(
+#     project_type_id: 2,
+#     description: "The faucet in my kitchen sink has a consistent drip",
+#     novice_id: 1,
+#     title: "Fix my Leaky Faucet",
+#     expert_status: 'none',
+#     is_complete: false
+# )
+
+# ChatRoom.create(project_id: leaky_faucet.id)
+
