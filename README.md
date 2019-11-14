@@ -16,7 +16,7 @@ Please enter a unique email and password. If the username is already in use, you
 <img src="http://drive.google.com/uc?export=view&id=1zec7ASo7huHulmX8LDiGr7ddaY7Q9zvQ" alt="drawing" width="300"/>
 
 ### 2) Check out Project Management Dashboard
-<img src="http://drive.google.com/uc?export=view&id=1p0u1m5H_N3jJd0n2bzPtoZZjG1AHolLC" alt="drawing" width="300"/>
+<img src="http://drive.google.com/uc?export=view&id=1p0u1m5H_N3jJd0n2bzPtoZZjG1AHolLC" alt="drawing" width="600"/>
 
 Novices and experts collaborate on creating materials and task lists. They are able to comment on each item and engage in real-time chat. The dashboard is powered by sockets and acts like a Google Doc, so both the novice and expert can access and make live changes to facilitate collaboration.
 
